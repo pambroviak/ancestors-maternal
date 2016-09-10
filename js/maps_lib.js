@@ -76,10 +76,10 @@
     var maxDate = moment(); //now
 
     //starting values
-    var startDate = moment().subtract('years', 50); //past 50 years
+    var startDate = moment().subtract('years', 10); //past 50 years
     var endDate = moment(); //now
 
-    self.initializeDateSlider(minDate, maxDate, startDate, endDate, "years", 50);
+    self.initializeDateSlider(minDate, maxDate, startDate, endDate, "years", 10);
         //-----end of custom initializers-----
 
         //run the default search when page loads
@@ -217,8 +217,8 @@
         
         //-----custom filters-----
             //next command adds drop down for years
-        if ( $("#select_type").val() != "")
-            self.whereClause += " AND 'Year' = '" + $("#select_type").val() + "'";
+        //if ( $("#select_type").val() != "")
+            //self.whereClause += " AND 'Year' = '" + $("#select_type").val() + "'";
             //next commands adds slider filter function
             self.whereClause += " AND 'Year' >= '" + $('#startDate').html() + "'";
             self.whereClause += " AND 'Year' <= '" + $('#endDate').html() + "'";
