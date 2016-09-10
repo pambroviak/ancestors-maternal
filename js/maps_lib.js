@@ -80,6 +80,9 @@
     var endDate = moment(); //now
 
     self.initializeDateSlider(minDate, maxDate, startDate, endDate, "years", 10);
+    
+    //sets initial value for text search
+    $("#text_search").val("");
         //-----end of custom initializers-----
 
         //run the default search when page loads
@@ -222,6 +225,10 @@
             //next commands adds slider filter function
             self.whereClause += " AND 'Year' >= '" + $('#startDate').html() + "'";
             self.whereClause += " AND 'Year' <= '" + $('#endDate').html() + "'";
+            //next commands add ability to perform a text search for resident name
+            var text_search = $("#text_search").val().replace("'", "\\'");
+            if (text_search != '')
+            self.whereClause += " AND 'Resident' contains ignoring case '" + text_search + "'";
             
         //-----end of custom filters-----
 
