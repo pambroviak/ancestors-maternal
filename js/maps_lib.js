@@ -150,7 +150,7 @@
                 where: whereClause
             },
             styleId: 2,
-            templateId: 3
+            templateId: 2
         });
         self.fusionTable = self.searchrecords;
         self.searchrecords.setMap(map);
